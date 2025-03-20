@@ -16,6 +16,20 @@ body {
   margin: 1em;
 }
 
+.method {
+  background-color: #d3a4f9;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin: 1em;
+}
+
+.exercices {
+  background-color: #a4c6f9;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin: 1em;
+}
+
 .title {
   font-size: 4em;
   text-align: center;
