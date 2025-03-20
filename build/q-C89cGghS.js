@@ -1,0 +1,1 @@
+const c=()=>{const e=document.getElementById("decimalInput").value,t=/^-?\d+(\.\d+)?$/.test(e.replace(",","."));alert(t?"C'est un nombre décimal":"Ce n'est pas un nombre décimal")};export{c as s_W52ZSo9npMc};

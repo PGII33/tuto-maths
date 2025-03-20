@@ -1,0 +1,1 @@
+const o=()=>{const m=(Math.random()*200).toFixed(2),t=(Math.random()*120).toFixed(2),e=document.getElementById("randomDecimal1"),n=document.getElementById("randomDecimal2");e&&n&&(e.innerText=m,n.innerText=t)};export{o as s_5QewyLi0ydc};

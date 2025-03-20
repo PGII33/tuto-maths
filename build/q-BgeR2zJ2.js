@@ -1,0 +1,1 @@
+import{_ as e}from"./q-D4qHCjh2.js";import{c as t,q as o}from"./q-4vI4nUjM.js";const i=t(o(()=>e(()=>import("./q-D6oPc033.js"),[]),"s_YXJjbvYzzks")),a={title:"Suite de nombres",meta:[{name:"description",content:"Un site avec des cours et des exercices mathématiques"}]};export{i as default,a as head};
