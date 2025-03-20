@@ -26,7 +26,24 @@ export default component$(() => {
         <h2> Est-ce un nombre décimal ?</h2>
         <p>
           Dans cette activité, vous pouvez entrer un nombre pour s'avoir s'il
-          s'agit d'un nombre décimal !<br />
+          s'agit d'un nombre en écriture décimale !<br />
+          <input type="text" id="decimalInput" placeholder="Entrez un nombre" />
+          <button
+            onClick$={() => {
+              const inputElement = document.getElementById(
+                "decimalInput",
+              ) as HTMLInputElement;
+              const input = inputElement.value;
+              const isDecimal = /^-?\d+(\.\d+)?$/.test(input.replace(",", "."));
+              alert(
+                isDecimal
+                  ? "C'est un nombre décimal"
+                  : "Ce n'est pas un nombre décimal",
+              );
+            }}
+          >
+            Vérifier
+          </button>
         </p>
       </div>
     </>
