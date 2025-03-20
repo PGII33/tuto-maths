@@ -12,6 +12,9 @@ export default component$(() => {
           <li>
             <Link href="/nombres-decimaux"> Les nombres décimaux </Link>
           </li>
+          <li>
+            <Link href="/suite-de-nombres"> Les suites de nombres </Link>
+          </li>
         </ul>
       </div>
     </>
