@@ -1,25 +1,29 @@
 import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
     <>
-      <h1>Hi 👋</h1>
+      <div class="title"> Tuto Maths </div>
+      <p> Les différents cours disponibles sont les suivants : </p>
       <div>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
+        <ul>
+          <li>
+            <Link href="/nombres-decimaux"> Les nombres décimaux </Link>
+          </li>
+        </ul>
       </div>
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Tuto Maths",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "Un site avec des cours et des exercices mathématiques",
     },
   ],
 };

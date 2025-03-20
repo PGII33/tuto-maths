@@ -1,0 +1,22 @@
+body {
+  background-color: #e5dec5;
+}
+
+.courses {
+  background-color: #a3cfc4;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin: 1em;
+}
+
+.activity {
+  background-color: #f7d270;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin: 1em;
+}
+
+.title {
+  font-size: 4em;
+  text-align: center;
+}
