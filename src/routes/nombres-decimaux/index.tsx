@@ -12,16 +12,31 @@ export default component$(() => {
           de chiffres après la virgule <br />
           Par exemple :
         </p>
-
         <ul>
           <li> 1,1 </li>
           <li> 40,98 </li>
           <li> 0,03 </li>
           <li> 1 </li>
         </ul>
-
-        <p>Sont des nombres décimaux</p>
+        <p>
+          Sont des nombres décimaux. <br />
+          En effet :
+        </p>
+        <ul>
+          <li> 1,1 possède un uniqume chiffre après la virgule</li>
+          <li> 40,98 possède 2 chiffres après la virgule</li>
+          <li> 0,03 possède aussi 2 chiffres après la virgule</li>
+          <li> 1 possède 0 chiffres après la virgule</li>
+        </ul>
+        <p>
+          En revanche, 2/3 qui s'écrirait 0,6666... avec une infinité de 6 n'est
+          pas un nombre décimal car il n'y a pas un nombre fini de chiffres
+          après la virgule (ici une infinité). <br />
+          De même pour π qui s'écrit 3,14159265358979323846... avec une infinité
+          de chiffres
+        </p>
       </div>
+
       <div class="activity">
         <h2> Est-ce un nombre décimal ?</h2>
         <p>
