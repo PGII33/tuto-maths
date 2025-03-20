@@ -111,7 +111,7 @@ export default component$(() => {
               const isDecimal2 = /^-?\d+(\.\d+)?$/.test(input2);
 
               if (isDecimal1 && isDecimal2) {
-                const getDecimalCount = (numStr) => {
+                const getDecimalCount = (numStr: string) => {
                   const parts = numStr.split(".");
                   return parts.length > 1 ? parts[1].length : 0;
                 };
@@ -135,16 +135,21 @@ export default component$(() => {
       </div>
 
       <div class="exercices">
-        <h2> Addition de 2 nombres décimaux </h2>
+        <h2> Addition de deux nombres décimaux </h2>
         <div>
           <button
             onClick$={() => {
               const randomDecimal1 = (Math.random() * 200).toFixed(2);
               const randomDecimal2 = (Math.random() * 120).toFixed(2);
-              document.getElementById("randomDecimal1").innerText =
-                randomDecimal1;
-              document.getElementById("randomDecimal2").innerText =
-                randomDecimal2;
+              const randomDecimal1Element =
+                document.getElementById("randomDecimal1");
+              const randomDecimal2Element =
+                document.getElementById("randomDecimal2");
+
+              if (randomDecimal1Element && randomDecimal2Element) {
+                randomDecimal1Element.innerText = randomDecimal1;
+                randomDecimal2Element.innerText = randomDecimal2;
+              }
             }}
           >
             Générer des nombres aléatoires
@@ -156,21 +161,29 @@ export default component$(() => {
           </p>
           <button
             onClick$={() => {
-              const randomDecimal1 = parseFloat(
-                document.getElementById("randomDecimal1").innerText,
-              );
-              const randomDecimal2 = parseFloat(
-                document.getElementById("randomDecimal2").innerText,
-              );
-              if (!isNaN(randomDecimal1) && !isNaN(randomDecimal2)) {
-                const sum = randomDecimal1 + randomDecimal2;
-                alert(
-                  `La somme des deux nombres aléatoires est : ${sum.toFixed(2).replace(".", ",")}`,
+              const randomDecimal1Element =
+                document.getElementById("randomDecimal1");
+              const randomDecimal2Element =
+                document.getElementById("randomDecimal2");
+
+              if (randomDecimal1Element && randomDecimal2Element) {
+                const randomDecimal1 = parseFloat(
+                  randomDecimal1Element.innerText,
                 );
-              } else {
-                alert(
-                  "Veuillez générer deux nombres décimaux aléatoires d'abord",
+                const randomDecimal2 = parseFloat(
+                  randomDecimal2Element.innerText,
                 );
+
+                if (!isNaN(randomDecimal1) && !isNaN(randomDecimal2)) {
+                  const sum = randomDecimal1 + randomDecimal2;
+                  alert(
+                    `La somme des deux nombres aléatoires est : ${sum.toFixed(2).replace(".", ",")}`,
+                  );
+                } else {
+                  alert(
+                    "Veuillez générer deux nombres décimaux aléatoires d'abord",
+                  );
+                }
               }
             }}
           >
