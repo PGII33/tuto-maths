@@ -36,7 +36,6 @@ export default component$(() => {
           de chiffres
         </p>
       </div>
-
       <div class="activity">
         <h2> Est-ce un nombre décimal ?</h2>
         <p>
@@ -60,6 +59,124 @@ export default component$(() => {
             Vérifier
           </button>
         </p>
+      </div>
+
+      <div class="method">
+        <h2> Addition de nombres décimaux </h2>
+        <p>
+          Pour additionner des nombres décimaux, on procède de la même manière
+          que pour les nombres entiers. <br />
+          On aligne les virgules et on additionne les chiffres de droite à
+          gauche. Si un nombre possède plus de chiffres après la virgule, il
+          suffit d'ajouter des 0 à la suite du nombre qui en a le moins. <br />
+          <br />
+          Par exemple :
+        </p>
+
+        <div style="display: inline-block; font-family: monospace; text-align: right; line-height: 1.4;">
+          <div> 23,40</div>
+          <div>+ 12,73</div>
+          <div>-------</div>
+          <div> 36,13</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <h2> Additionnez deux nombres décimaux </h2>
+        <p>
+          Dans cette activité, vous pouvez entrer deux nombres décimaux et les
+          additionner !<br />
+          <input
+            type="text"
+            id="decimalInput1"
+            placeholder="Entrez le premier nombre"
+          />
+          <input
+            type="text"
+            id="decimalInput2"
+            placeholder="Entrez le deuxième nombre"
+          />
+          <button
+            onClick$={() => {
+              const inputElement1 = document.getElementById(
+                "decimalInput1",
+              ) as HTMLInputElement;
+              const inputElement2 = document.getElementById(
+                "decimalInput2",
+              ) as HTMLInputElement;
+              const input1 = inputElement1.value.replace(",", ".");
+              const input2 = inputElement2.value.replace(",", ".");
+
+              const isDecimal1 = /^-?\d+(\.\d+)?$/.test(input1);
+              const isDecimal2 = /^-?\d+(\.\d+)?$/.test(input2);
+
+              if (isDecimal1 && isDecimal2) {
+                const getDecimalCount = (numStr) => {
+                  const parts = numStr.split(".");
+                  return parts.length > 1 ? parts[1].length : 0;
+                };
+
+                const decimals1 = getDecimalCount(input1);
+                const decimals2 = getDecimalCount(input2);
+                const maxDecimals = Math.max(decimals1, decimals2);
+
+                const sum = parseFloat(input1) + parseFloat(input2);
+                alert(
+                  `La somme des deux nombres est : ${sum.toFixed(maxDecimals).replace(".", ",")}`,
+                );
+              } else {
+                alert("Veuillez entrer deux nombres décimaux valides");
+              }
+            }}
+          >
+            Additionner
+          </button>
+        </p>
+      </div>
+
+      <div class="exercices">
+        <h2> Addition de 2 nombres décimaux </h2>
+        <div>
+          <button
+            onClick$={() => {
+              const randomDecimal1 = (Math.random() * 200).toFixed(2);
+              const randomDecimal2 = (Math.random() * 120).toFixed(2);
+              document.getElementById("randomDecimal1").innerText =
+                randomDecimal1;
+              document.getElementById("randomDecimal2").innerText =
+                randomDecimal2;
+            }}
+          >
+            Générer des nombres aléatoires
+          </button>
+          <p>
+            Nombre 1: <span id="randomDecimal1"></span>
+            <br />
+            Nombre 2: <span id="randomDecimal2"></span>
+          </p>
+          <button
+            onClick$={() => {
+              const randomDecimal1 = parseFloat(
+                document.getElementById("randomDecimal1").innerText,
+              );
+              const randomDecimal2 = parseFloat(
+                document.getElementById("randomDecimal2").innerText,
+              );
+              if (!isNaN(randomDecimal1) && !isNaN(randomDecimal2)) {
+                const sum = randomDecimal1 + randomDecimal2;
+                alert(
+                  `La somme des deux nombres aléatoires est : ${sum.toFixed(2).replace(".", ",")}`,
+                );
+              } else {
+                alert(
+                  "Veuillez générer deux nombres décimaux aléatoires d'abord",
+                );
+              }
+            }}
+          >
+            Afficher la somme
+          </button>
+        </div>
       </div>
     </>
   );
