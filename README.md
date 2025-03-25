@@ -69,3 +69,15 @@ npm run build # or `yarn build`
 ```shell
 npm run build.server
 ```
+
+## Static Site Generator (Node.js)
+
+```shell
+npm run build.server
+```
+
+## Static Site Generator (Node.js)
+
+```shell
+npm run build.server
+```

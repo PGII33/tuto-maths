@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: "https://pgii33.github.io/tuto-maths/",
+        origin: "https://pgii33.github.io/tuto-maths",
       }),
     ],
   };

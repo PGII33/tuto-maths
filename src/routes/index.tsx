@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
@@ -10,10 +9,10 @@ export default component$(() => {
       <div>
         <ul>
           <li>
-            <Link href="/nombres-decimaux"> Les nombres décimaux </Link>
+            <a href="nombres-decimaux"> Les nombres décimaux </a>
           </li>
           <li>
-            <Link href="/suite-de-nombres"> Les suites de nombres </Link>
+            <a href="suite-de-nombres"> Les suites de nombres </a>
           </li>
         </ul>
       </div>
