@@ -1,0 +1,1 @@
+import{a6 as e,q as t,h as s}from"./q-CpqRnH8m.js";const o=e(t(()=>s(()=>import("./q-Cbe1SPCd.js"),[]),"s_B0lqk5IDDy4")),i={title:"Tuto Maths",meta:[{name:"description",content:"Un site avec des cours et des exercices mathématiques"}]};export{o as default,i as head};
